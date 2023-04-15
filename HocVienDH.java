@@ -1,4 +1,4 @@
-package Bai10;
+package tuan5;
 
 import java.util.Scanner;
 
