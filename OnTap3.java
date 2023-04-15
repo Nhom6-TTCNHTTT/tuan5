@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ontap3;
+package PhucDinh;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Name
  */
-public class OnTap3 {
+public class GV{
 
     public static ArrayList<GiangVien> Fakedata(){
         ArrayList<GiangVien> dsGiangVien=new ArrayList();
