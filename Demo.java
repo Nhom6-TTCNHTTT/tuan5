@@ -24,78 +24,30 @@ public class Demo {
         return dsNguoiLD;
     }
     
-    /*
-    public static ArrayList<NguoiLaoDong> fakeKySu() {
-        ArrayList<NguoiLaoDong> dsNguoiLD = new ArrayList();
-        KySu ks1 = new KySu(...);
-        dsNguoiLD.add(ks1);
-        return dsNguoiLD;
-    }
-    */
-    
     public static void Nhap(ArrayList<NguoiLaoDong> dsNguoiLD) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nh?p s? l˝?ng ng˝?i lao ?ng: ");
+        System.out.print("Nh?p s? l√Ω?ng ng√Ω?i lao √∞?ng: ");
         int n = sc.nextInt();
         sc.nextLine();
         for(int i=0; i<n; i++) {
-            System.out.println("Nh?p thÙng tin c?a ng˝?i lao ?ng th? " + (i+1) + ": ");
+            System.out.println("Nh?p th√¥ng tin c?a ng√Ω?i lao √∞?ng th? " + (i+1) + ": ");
             KySu ks = new KySu();
             ks.Nhap();
             dsNguoiLD.add(ks);
         }
-        
-        /*
-        public static void Nhap(ArrayList<NguoiLaoDong> dsNguoiLD){
-            Scanner sc = new Scanner(System.in);
-            System.out.printf("Nhap so luong nguoi lao dong: ");
-            int n = sc.nextInt();
-            sc.nextLine();
-            for(int i=0; i<n; i++)
-            {
-                System.out.println("Nhap thong tin nguoi lao dong thu " +(i+1)+": ");
-                KySu ks = new KySu();
-                ks.Nhap();
-                dsNguoiLD.add(ks);
-            }
-        }*/
+      
     }
     
     public static void Xuat(ArrayList<NguoiLaoDong> dsNguoiLD) {
         
-        System.out.println("Danh s·ch c·c k? s˝ l‡: ");
-        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tÍn", "–?a ch?", "Lo?i lao ?ng", "S? ng‡y cÙng", "L˝ıng cı b?n", "H? s? l˝ıng", "L˝ıng th·ng" );
+        System.out.println("Danh s√°ch c√°c k? s√Ω l√†: ");
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? t√™n", "√ê?a ch?", "Lo?i lao √∞?ng", "S? ng√†y c√¥ng", "L√Ω√µng c√µ b?n", "H? s? l√Ω√µng", "L√Ω√µng th√°ng" );
         for(NguoiLaoDong ks:dsNguoiLD) {
             System.out.println("\n");
             ks.Xuat();
         }
     }
-    /*
-        public static void Xuat(ArrayList<NguoiLaoDong> dsNguoiLD){
-            System.out.printf("Danh sach nguoi lao dong: ");
-            System.out.printf("%20s" ....
-            for(NguoiLaoDong ks:dsNguoiLD)
-            {
-                sout("\n);
-                ks.Xuat();
-            }
-        }*/
     
-    /*public static void sapXep(ArrayList<NguoiLaoDong> dsNguoiLD) {
-        Comparator<NguoiLaoDong> c = new Comparator<NguoiLaoDong>() {
-            @Override
-            public int compare(NguoiLaoDong o1, NguoiLaoDong o2) {
-                return o1.getHoTen().compareToIgnoreCase(o2.getHoTen());
-            }
-        };
-        Collections.sort(dsNguoiLD, c);
-        System.out.println("\nDanh s·ch c·c k? s˝ sau khi s?p x?p theo tÍn l‡: ");
-        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tÍn", "–?a ch?", "Lo?i lao ?ng", "S? ng‡y cÙng", "L˝ıng cı b?n", "H? s? l˝ıng", "L˝ıng th·ng" );
-        for(NguoiLaoDong ks:dsNguoiLD) {
-            System.out.println("\n");
-            ks.Xuat();
-        }
-    }*/
     
     public static void sapXep(ArrayList<NguoiLaoDong> dsNguoiLD) {
         Comparator<NguoiLaoDong> c = new Comparator<NguoiLaoDong>(){
@@ -106,7 +58,7 @@ public class Demo {
         };
         Collections.sort(dsNguoiLD, c);
         System.out.println("Danh sach sau khi sap xep: ");
-        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tÍn", "–?a ch?", "Lo?i lao ?ng", "S? ng‡y cÙng", "L˝ıng cı b?n", "H? s? l˝ıng", "L˝ıng th·ng" );
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? t√™n", "√ê?a ch?", "Lo?i lao √∞?ng", "S? ng√†y c√¥ng", "L√Ω√µng c√µ b?n", "H? s? l√Ω√µng", "L√Ω√µng th√°ng" );
         for(NguoiLaoDong ks:dsNguoiLD) {
             System.out.println("\n");
             ks.Xuat();
@@ -121,7 +73,7 @@ public class Demo {
             }
         });
         System.out.println("\nNguoi lao dong co luong thang nho nhat la: " + min.getHoTen());
-        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tÍn", "–?a ch?", "Lo?i lao ?ng", "S? ng‡y cÙng", "L˝ıng cı b?n", "H? s? l˝ıng", "L˝ıng th·ng" );
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? t√™n", "√ê?a ch?", "Lo?i lao √∞?ng", "S? ng√†y c√¥ng", "L√Ω√µng c√µ b?n", "H? s? l√Ω√µng", "L√Ω√µng th√°ng" );
         min.Xuat();
     }
     
