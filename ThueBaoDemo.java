@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package TX1;
+package tuan5;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-/**
- *
- * @author ngoct
- */
-public class Main {
+public class ThueBaoDemo {
     static int n;
     static ThueBaoTheoDungLuong[] dsTB;
     
