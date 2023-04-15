@@ -1,5 +1,5 @@
 # --TUẦN 5:
 # Uông Văn Nhật:
 # Đinh Văn Phúc:
-# Đặng Quốc Việt:
+# Đặng Quốc Việt: KySu.java, NguoiLaoDong.java, Demo.java
 # Ngô Đình Việt:HocVien.java , HocVienDH.java , Demo.java
