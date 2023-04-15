@@ -1,118 +1,135 @@
-package Bai10;
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package TX1_Test1;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
-
+/**
+ *
+ * @author Dell Pc
+ */
 public class Demo {
-	
-	public static void fakedata (List<HocVien> list) {
-		//ArrayList<HocVien> dsHocVien = new ArrayList<>();
-		HocVienDH  dh1 = new HocVienDH(20, 100000, "Viet","HN", 1 ,"DH" );
-		HocVienDH  dh2 = new HocVienDH(30, 200000, "Viet1","HN", 2 ,"LT" );
-		HocVienDH  dh3 = new HocVienDH(40, 150000, "Viet2","HN", 1 ,"DH" );
-		list.add(dh1);
-		list.add(dh2);
-		list.add(dh3);
-		/*list.add( new HocVienDH(20, 100000, "Viet","HN", 1 ,"DH" ));
-		list.add( new HocVienDH(20, 100000, "Viet1","HN", 1 ,"DH" ));
-		list.add( new HocVienDH(20, 100000, "Viet2","HN", 1 ,"DH" ));*/
-		for(HocVien hv:list) {		
-			hv.inThongTin();			
-		}
-		//return dsHocVien;
-	}
-		
-	public static void xuatTieuDe() {
-		System.out.printf("%15s %15s %15s %15s %15s %15s %15s\n", "Ten", "Dia Chi", "Loai UT", "Loai CT","So Buoi", "Don Gia","HocPhi" );
-	}
-	public static void nhap(List<HocVien> dsHocVien){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Nháº­p sá»‘ luongj hoc vien");
-        int n=sc.nextInt();
+    public static ArrayList<NguoiLaoDong> fakeKySu() {
+        ArrayList<NguoiLaoDong> dsNguoiLD = new ArrayList();
+        KySu ks1 = new KySu("Dang Quoc Viet", "Ha Noi", "Ki su", 15, 15, 15 );
+        KySu ks2 = new KySu("Vuong Tuan Chinh", "Ha Noi", "lao dong pho thong", 9, 9, 9 );
+        KySu ks3 = new KySu("Uong Van Nhat", "Ha Noi", "Ki su", 26, 26, 26 );
+        dsNguoiLD.add(ks1);
+        dsNguoiLD.add(ks2);
+        dsNguoiLD.add(ks3);
+        return dsNguoiLD;
+    }
+    
+    /*
+    public static ArrayList<NguoiLaoDong> fakeKySu() {
+        ArrayList<NguoiLaoDong> dsNguoiLD = new ArrayList();
+        KySu ks1 = new KySu(...);
+        dsNguoiLD.add(ks1);
+        return dsNguoiLD;
+    }
+    */
+    
+    public static void Nhap(ArrayList<NguoiLaoDong> dsNguoiLD) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nh?p s? lý?ng ngý?i lao ð?ng: ");
+        int n = sc.nextInt();
         sc.nextLine();
-        for(int i=0;i<n;i++){
-            System.out.println("Nháº­p thÃ´ng tin hoc vien thá»© " + (i+1) + ":");
-            HocVienDH gv =new HocVienDH();
-            gv.nhap();
-            dsHocVien.add(gv);
+        for(int i=0; i<n; i++) {
+            System.out.println("Nh?p thông tin c?a ngý?i lao ð?ng th? " + (i+1) + ": ");
+            KySu ks = new KySu();
+            ks.Nhap();
+            dsNguoiLD.add(ks);
+        }
+        
+        /*
+        public static void Nhap(ArrayList<NguoiLaoDong> dsNguoiLD){
+            Scanner sc = new Scanner(System.in);
+            System.out.printf("Nhap so luong nguoi lao dong: ");
+            int n = sc.nextInt();
+            sc.nextLine();
+            for(int i=0; i<n; i++)
+            {
+                System.out.println("Nhap thong tin nguoi lao dong thu " +(i+1)+": ");
+                KySu ks = new KySu();
+                ks.Nhap();
+                dsNguoiLD.add(ks);
+            }
+        }*/
+    }
+    
+    public static void Xuat(ArrayList<NguoiLaoDong> dsNguoiLD) {
+        
+        System.out.println("Danh sách các k? sý là: ");
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tên", "Ð?a ch?", "Lo?i lao ð?ng", "S? ngày công", "Lýõng cõ b?n", "H? s? lýõng", "Lýõng tháng" );
+        for(NguoiLaoDong ks:dsNguoiLD) {
+            System.out.println("\n");
+            ks.Xuat();
         }
     }
-	public static void sapxep(List<HocVien> dsHocVien) {
-		Comparator<HocVien> c = new Comparator<HocVien>() {
-			@Override
-            public int compare(HocVien o1,HocVien o2) {
+    /*
+        public static void Xuat(ArrayList<NguoiLaoDong> dsNguoiLD){
+            System.out.printf("Danh sach nguoi lao dong: ");
+            System.out.printf("%20s" ....
+            for(NguoiLaoDong ks:dsNguoiLD)
+            {
+                sout("\n);
+                ks.Xuat();
+            }
+        }*/
+    
+    /*public static void sapXep(ArrayList<NguoiLaoDong> dsNguoiLD) {
+        Comparator<NguoiLaoDong> c = new Comparator<NguoiLaoDong>() {
+            @Override
+            public int compare(NguoiLaoDong o1, NguoiLaoDong o2) {
                 return o1.getHoTen().compareToIgnoreCase(o2.getHoTen());
-			}
-		};
-		Collections.sort(dsHocVien, c);
-		System.out.println("\n Danh sÃ¡ch sáº¯p xáº¿p: ");
-		xuatTieuDe();
-		for(HocVien hv:dsHocVien) {
-			if(hv instanceof HocVienDH) {
-				hv.inThongTin();
-			}
-			
-		}
-	}
-	public static void Max(List<HocVien> dsHocVien) {
-		HocVien max = Collections.max(dsHocVien, new Comparator<HocVien>(){
-			@Override
-			public int compare(HocVien o1, HocVien o2) {
-				return Double.compare(o1.hocPhi(), o2.hocPhi() );
-			}
-		});
-		System.out.println("Max");
-		max.inThongTin();
-	}
-	
-	
-	
-	public static void main(String[] args) {
-		//ArrayList<HocVien> dsHocVien = fakedata();
-		List<HocVien> dsHocVien = new ArrayList<HocVien>();
-		fakedata(dsHocVien);
-		nhap(dsHocVien);
-		xuatTieuDe();
-		for(HocVien hv:dsHocVien) {	
-			hv.inThongTin();				
-		}
-		/*System.out.println("Danh Sach 3 hoc vien");
-		xuatTieuDe();
-		for(HocVien hv:dsHocVien) {
-			if(hv instanceof HocVienDH) {
-				hv.inThongTin();
-			}
-			
-		}
-		nhap(dsHocVien);
-		xuatTieuDe();
-		for(HocVien hv:dsHocVien) {
-			if(hv instanceof HocVienDH) {
-				hv.inThongTin();
-			}
-			
-		}*/
-		sapxep(dsHocVien);
-		Max(dsHocVien);
-		/*HocVienDH  dh = new HocVienDH();
-		int n ;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Nhap so luong ");
-		n = sc.nextInt();
-		for(int i=0;i<n;i++) {
-			dh.nhap();
-			dsHocVien.add(dh);
-		}
-		xuatTieuDe();
-		for(HocVien hv:dsHocVien) {
-			if(hv instanceof HocVienDH) {
-				hv.inThongTin();
-			}
-			
-		}*/
-	}
-
+            }
+        };
+        Collections.sort(dsNguoiLD, c);
+        System.out.println("\nDanh sách các k? sý sau khi s?p x?p theo tên là: ");
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tên", "Ð?a ch?", "Lo?i lao ð?ng", "S? ngày công", "Lýõng cõ b?n", "H? s? lýõng", "Lýõng tháng" );
+        for(NguoiLaoDong ks:dsNguoiLD) {
+            System.out.println("\n");
+            ks.Xuat();
+        }
+    }*/
+    
+    public static void sapXep(ArrayList<NguoiLaoDong> dsNguoiLD) {
+        Comparator<NguoiLaoDong> c = new Comparator<NguoiLaoDong>(){
+            @Override
+            public int compare(NguoiLaoDong o1, NguoiLaoDong o2) {
+                return o1.getHoTen().compareToIgnoreCase(o2.getHoTen());
+            }
+        };
+        Collections.sort(dsNguoiLD, c);
+        System.out.println("Danh sach sau khi sap xep: ");
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tên", "Ð?a ch?", "Lo?i lao ð?ng", "S? ngày công", "Lýõng cõ b?n", "H? s? lýõng", "Lýõng tháng" );
+        for(NguoiLaoDong ks:dsNguoiLD) {
+            System.out.println("\n");
+            ks.Xuat();
+        }
+    }
+    
+    public static void Min(ArrayList<NguoiLaoDong> dsNguoiLD) {
+        NguoiLaoDong min = Collections.min(dsNguoiLD, new Comparator<NguoiLaoDong>() {
+            @Override
+            public int compare(NguoiLaoDong o1, NguoiLaoDong o2) {
+                return Double.compare(o1.tinhLuong(), o2.tinhLuong());
+            }
+        });
+        System.out.println("\nNguoi lao dong co luong thang nho nhat la: " + min.getHoTen());
+        System.out.printf("%20s %20s %20s %20s %20s %20s %20s", "H? tên", "Ð?a ch?", "Lo?i lao ð?ng", "S? ngày công", "Lýõng cõ b?n", "H? s? lýõng", "Lýõng tháng" );
+        min.Xuat();
+    }
+    
+    public static void main(String[] args) {
+        ArrayList<NguoiLaoDong> dsNguoiLD = fakeKySu();
+        Nhap(dsNguoiLD);
+        Xuat(dsNguoiLD);
+        sapXep(dsNguoiLD);
+        Min(dsNguoiLD);
+    }
 }
