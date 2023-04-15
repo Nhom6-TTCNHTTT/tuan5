@@ -12,7 +12,7 @@ import java.util.Comparator;
  *
  * @author Dell Pc
  */
-public class Demo {
+public class DemoKySu {
     public static ArrayList<NguoiLaoDong> fakeKySu() {
         ArrayList<NguoiLaoDong> dsNguoiLD = new ArrayList();
         KySu ks1 = new KySu("Dang Quoc Viet", "Ha Noi", "Ki su", 15, 15, 15 );
