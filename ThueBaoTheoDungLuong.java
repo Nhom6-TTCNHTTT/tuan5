@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package TX1;
+package tuan5;
 
 import java.util.Scanner;
 
-/**
- *
- * @author ngoct
- */
 public class ThueBaoTheoDungLuong extends ThueBao implements NhapXuat{
     private int dungLuong;
     
